@@ -1,0 +1,138 @@
+// Styles généraux
+.home {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    width: 100%;
+  }
+
+  &__text-wrapper {
+    flex: 1;
+    max-width: 700px;
+    text-align: left;
+
+    .typing-animation {
+      font-size: 2.5rem;
+      font-weight: bold;
+      white-space: nowrap;
+      border-right: 4px solid #00c4e7;
+      display: inline-block;
+      max-width: 100%;
+      animation: typing 4s steps(40, end) infinite, blink 0.5s infinite;
+      margin-bottom: 30px;
+    }
+
+    .highlight {
+      color: #00c4e7;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #00c4e7, #0066ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+
+    .intro-text {
+      font-size: 1.7rem;
+      margin-top: 10px;
+      max-width: 700px;
+      line-height: 2;
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  &__image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    .profile-pic {
+      width: 450px;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 6px 20px rgba(0, 196, 231, 0.8);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover .profile-pic {
+      transform: scale(1.08);
+    }
+  }
+}
+
+// Bouton Contact avec effet lumière
+.contact-button {
+  margin-top: 30px;
+  background: linear-gradient(135deg, #00c4e7, #0066ff);
+  color: #ffffff;
+  border: none;
+  padding: 18px 36px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 20px rgba(0, 196, 231, 0.8);
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    background: linear-gradient(135deg, #0066ff, #00c4e7);
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 196, 231, 1);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    width: 200%;
+    height: 400%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 60%);
+    transform: translate(-50%, -50%);
+    transition: left 0.5s ease-in-out;
+  }
+
+  &:hover::after {
+    left: 50%;
+  }
+}
+
+// Responsivité
+@media screen and (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+
+    &__container {
+      flex-direction: column;
+    }
+
+    &__image {
+      margin-top: 20px;
+
+      .profile-pic {
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+:root {
+  --background-color: #0a0a0a;
+  --main-color: #00aaff;
+  --text-color: #ffffff;
+  --navbar-background: rgba(15, 15, 15, 0.9);
+  --hover-color: #0088cc;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--navbar-background);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar__logo__image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.navbar__logo__image:hover {
+  transform: scale(1.1);
+}
+
+.navbar__menu {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar__menu__item {
+  position: relative;
+}
+
+.navbar__menu__link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar__menu__link:hover {
+  color: var(--main-color);
+}
+
+.navbar__menu__link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background-color: var(--main-color);
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.navbar__menu__link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Bouton Toggle Mobile */
+.navbar__toggle {
+  display: none;
+  color: var(--text-color);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* 🌟 RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+  .navbar__toggle {
+    display: block;
+  }
+
+  .navbar__menu {
+    position: absolute;
+    top: -300px;
+    right: 0;
+    width: 100%;
+    background: var(--navbar-background);
+    text-align: center;
+    padding: 20px 0;
+    transition: top 0.5s ease-in-out;
+    flex-direction: column;
+  }
+
+  .navbar__menu.active {
+    top: 80px;
+  }
+
+  .navbar__menu__item {
+    padding: 15px 0;
+  }
+}

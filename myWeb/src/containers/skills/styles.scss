@@ -1,0 +1,110 @@
+.skills-section {
+  padding: 80px 20px;
+  text-align: center;
+
+  color: white;
+}
+
+.skills-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+      color: #0a86ee;
+      font-size: 30px;
+}
+
+.skills-content {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* 🎯 Carte catégorie */
+.skills-category {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  cursor: pointer;
+  min-width: 280px;
+  flex: 1;
+  max-width: 350px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    color: #0a86ee;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+/* 🎯 Élément individuel */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: #00adb5;
+    transform: scale(1.1);
+  }
+
+  .skill-icon {
+    font-size: 35px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .skill-name {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+}
+
+/* 📱 Responsive */
+@media screen and (max-width: 1024px) {
+  .skills-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skills-category {
+    width: 90%;
+  }
+}
