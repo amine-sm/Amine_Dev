@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import Typewriter from 'typewriter-effect';
 import './styles.scss';
 import profilePic from '../../assets/amine2.jpg';
 
@@ -25,31 +24,24 @@ function Home() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.5, ease: 'easeOut' }}
         >
-          <h1 className='typing-animation'>
-            <Typewriter
-              options={{
-                strings: ['Welcome', 'Bienvenue', 'مرحبا'],
-                autoStart: true,
-                loop: true,
-                delay: 80,
-                deleteSpeed: 50,
-              }}
-            />
+          <h1 className='animated-text'>
+            <motion.span 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.5 }}
+            >
+              Welcome, Bienvenue, مرحبا
+            </motion.span>
           </h1>
 
-          {/* Effet Typewriter pour l'introduction complète */}
-          <p className='typing-animation delay highlight'>
-            <Typewriter
-              options={{
-                strings: [
-                  'I am Mohammed El Amine Said Mansour, Full Stack Developer'
-                ],
-                autoStart: true,
-                loop: true,
-                delay: 80,
-                deleteSpeed: 50,
-              }}
-            />
+          <p className='animated-text highlight'>
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1 }}
+            >
+              I am Mohammed El Amine Said Mansour, Full Stack Developer
+            </motion.span>
           </p>
 
           <p className='intro-text'>
