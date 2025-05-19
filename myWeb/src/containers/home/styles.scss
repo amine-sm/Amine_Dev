@@ -1,7 +1,10 @@
-// Styles généraux
+// ===============================
+// Home Section Styling
+// ===============================
+
 .home {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +19,7 @@
     justify-content: space-between;
     max-width: 1400px;
     width: 100%;
+    flex-wrap: wrap;
   }
 
   &__text-wrapper {
@@ -23,21 +27,30 @@
     max-width: 700px;
     text-align: left;
 
-    .typing-animation {
-      font-size: 2.5rem;
+    h1.animated-text {
+      font-size: 3rem;
       font-weight: bold;
-      white-space: nowrap;
-      border-right: 4px solid #00c4e7;
-      display: inline-block;
-      max-width: 100%;
-      animation: typing 4s steps(40, end) infinite, blink 0.5s infinite;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      word-break: break-word;
+    }
+
+    p.animated-text {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      word-break: break-word;
     }
 
     .highlight {
       color: #00c4e7;
       font-weight: bold;
-      font-size: 1.4rem;
+    }
+
+    .intro-text {
+      font-size: 1.6rem;
+      margin-top: 10px;
+      max-width: 700px;
+      line-height: 2;
+      color: rgba(255, 255, 255, 0.9);
     }
 
     .gradient-text {
@@ -46,14 +59,6 @@
       -webkit-text-fill-color: transparent;
       font-size: 1.6rem;
       font-weight: bold;
-    }
-
-    .intro-text {
-      font-size: 1.7rem;
-      margin-top: 10px;
-      max-width: 700px;
-      line-height: 2;
-      color: rgba(255, 255, 255, 0.9);
     }
   }
 
@@ -77,7 +82,10 @@
   }
 }
 
-// Bouton Contact avec effet lumière
+// ===============================
+// Contact Button Styling
+// ===============================
+
 .contact-button {
   margin-top: 30px;
   background: linear-gradient(135deg, #00c4e7, #0066ff);
@@ -116,23 +124,75 @@
   }
 }
 
-// Responsivité
-@media screen and (max-width: 768px) {
+// ===============================
+// Responsive Styling
+// ===============================
+
+@media screen and (max-width: 1024px) {
   .home {
+    padding: 30px;
+  }
+
+  .home__container {
     flex-direction: column;
+    align-items: center;
     text-align: center;
+  }
 
-    &__container {
-      flex-direction: column;
+  .home__text-wrapper {
+    max-width: 100%;
+    padding: 20px;
+
+    h1.animated-text {
+      font-size: 2.4rem;
     }
 
-    &__image {
-      margin-top: 20px;
-
-      .profile-pic {
-        width: 300px;
-        height: 300px;
-      }
+    p.animated-text {
+      font-size: 1.4rem;
     }
+
+    .intro-text {
+      font-size: 1.2rem;
+    }
+  }
+
+  .home__image {
+    margin-top: 30px;
+
+    .profile-pic {
+      width: 280px;
+      height: 280px;
+    }
+  }
+
+  .contact-button {
+    font-size: 1.2rem;
+    padding: 14px 28px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home__text-wrapper {
+    h1.animated-text {
+      font-size: 2rem;
+    }
+
+    p.animated-text {
+      font-size: 1.2rem;
+    }
+
+    .intro-text {
+      font-size: 1rem;
+    }
+  }
+
+  .home__image .profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+
+  .contact-button {
+    font-size: 1rem;
+    padding: 12px 24px;
   }
 }
