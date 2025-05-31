@@ -15,7 +15,7 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm("service_yhjc3sm", "template_o2znj1t", e.target, "qDoLpPTdeZqPPGBC1")
+      .sendForm("service_yhjc3sm", "template_77powzk", e.target, "qDoLpPTdeZqPPGBC1")
       .then(() => {
         setIsSent(true);
         setTimeout(() => setIsSent(false), 3000);
